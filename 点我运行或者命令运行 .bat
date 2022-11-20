@@ -1,0 +1,3 @@
+@echo off
+title Martin_AI_Runing...
+python main.py 

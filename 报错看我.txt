@@ -1,0 +1,14 @@
+===========================
+1.！！！您的Python版本必须为3.7！！！
+点击PacketInstall.bat安装依赖
+
+当您第一次启动时可能会遇到
+ERROR:
+	1.(arg0:int) -> mdiapipe.python._framework_bindings.packet.Packet
+
+请在mediapipe\python\solution_base.py中将大约在589行处
+return getattr(packet_creator, 'create_' + packet_data_type.value)(data)
+改成
+return getattr(packet_creator, 'create_' + packet_data_type.value)(True if round(data)>0 else False)
+
+==============再次运行======
